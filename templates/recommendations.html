@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1f9f5b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1f9f5b;
+        }
+        .movie-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .movie-item {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .movie-item h4 {
+            margin: 0;
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1f9f5b;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Movie Recommendations for {{ name }}</h1>
+</header>
+
+<div class="container">
+    <h2>Recommended Movies Based on Your Preferences</h2>
+    <ul class="movie-list">
+        {% for movie in recommended_movies %}
+            <li class="movie-item">
+                <h4>{{ movie }}</h4>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<footer>
+    <p>© 2025 Movie Recommendation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
